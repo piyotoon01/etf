@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>ISA에 담을 ETF 한 장 정리 · 삐요</title>
+<meta name="description" content="ISA에 뭘 담아야 세금 혜택을 받을까? 주종목은 뭘로, 하나 더 섞는다면 뭘로? 삐요가 한 장으로 정리했어요. 2026년 10월 기준.">
+<meta property="og:title" content="ISA에 담을 ETF 한 장 정리 · 삐요">
+<meta property="og:description" content="세금 붙는 걸 담고, 주종목은 하나, 하나 더 섞는다면. 이거 하나면 끝.">
+<meta property="og:url" content="https://piyotoon01.github.io/etf/">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/piyo-point.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<style>
+  @font-face{font-family:'GmarketSans'; font-weight:300; font-display:swap; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff')}
+  @font-face{font-family:'GmarketSans'; font-weight:500; font-display:swap; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff')}
+  @font-face{font-family:'GmarketSans'; font-weight:700; font-display:swap; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff')}
+  :root{
+    --ink:#1A1A1A; --sub:#3B3934; --faint:#8A8780; --line:#1A1A1A; --hair:#E6E3DC;   /* 10/23 sub 진하게 (#55534E → #3B3934, 「회색 글씨가 잘 안 보여」) */
+    --blue:#2E4BFF; --blue-soft:#EDF0FF; --red:#E02020; --red-soft:#FDECEC;
+    --yel:#FFF6C2; --yel-d:#FFE566; --bg:#FFFFFF; --card:#FFFFFF; --soft:#FAF9F6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  /* 10/23 본문을 Light(300) → Medium(500)으로. 얇은 회색 글씨가 폰에서 흐리다고 해서. 굵은 글씨는 Bold(700) */
+  body{font-family:'GmarketSans',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:500;
+    background:var(--bg); color:var(--ink); line-height:1.7; font-size:16px; word-break:keep-all; overflow-wrap:break-word;
+    letter-spacing:-.02em}
+  b,strong{font-weight:700}
+  .wrap{max-width:600px; margin:0 auto; padding:0 18px 80px}
+  .blue{color:var(--blue)} .red{color:var(--red)}
+  .num{font-feature-settings:"tnum"}
+
+  header{padding:34px 0 22px; position:relative}
+  .date{font-size:14px; color:var(--sub)}
+  h1{font-weight:700; font-size:clamp(38px,10.5vw,56px); line-height:1.12; letter-spacing:-.05em; margin:10px 0 14px}
+  h1 .blue{display:block}
+  .lead{font-size:17px; color:var(--sub)}
+  .lead b{color:var(--ink)}
+
+  nav.toc{display:flex; flex-wrap:wrap; gap:6px; margin:22px 0 6px}
+  nav.toc a{display:inline-block; border:1.5px solid var(--line); border-radius:999px; padding:6px 11px 4px; font-size:13.5px;
+    color:var(--ink); text-decoration:none; font-weight:500; background:#fff}
+  nav.toc a:active{background:var(--yel)}
+
+  section{padding-top:40px; scroll-margin-top:10px}
+  .pill{display:inline-block; border:2.5px solid var(--line); border-radius:999px; padding:10px 20px 7px; font-size:22px; font-weight:700;
+    letter-spacing:-.04em; background:#fff}
+  .ans{font-size:17px; margin:12px 0 18px; color:var(--ink)}
+  .ans::before{content:"→ "; color:var(--blue); font-weight:700}
+  p{margin:10px 0}
+  .small{font-size:15px; color:var(--sub)}
+
+  .items{list-style:none; margin:6px 0}
+  .items li{padding:14px 0; border-top:1.5px dashed var(--hair)}
+  .items li:first-child{border-top:none}
+  .items .h{font-size:19px; font-weight:700; display:block; line-height:1.4}
+  .items .d{display:block; color:var(--sub); font-size:15.5px; margin-top:3px}
+  .items .n{color:var(--ink); font-weight:700; margin-right:4px}
+
+  .box{border:2px solid var(--line); border-radius:22px; padding:18px 18px 16px; margin:16px 0; background:var(--card)}
+  .box.yel{background:var(--yel)}
+  .box.soft{background:var(--soft); border-color:var(--hair)}
+  .box h3{font-size:18px; font-weight:700; margin-bottom:6px; letter-spacing:-.03em}
+
+  .vs{display:grid; grid-template-columns:1fr 1fr; gap:10px; position:relative; margin:14px 0 8px}
+  .vs .c{border:2px solid var(--line); border-radius:20px; padding:16px 8px 14px; text-align:center; background:#FFFEFA}
+  .vs .t{font-weight:700; font-size:16px}
+  .vs .s{font-size:14px; color:var(--sub)}
+  .vs .v{font-size:27px; font-weight:700; letter-spacing:-.04em; margin-top:4px}
+  .vs .mid{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:50%;
+    border:2px solid var(--line); background:#fff; display:grid; place-items:center; font-weight:700; font-size:14px}
+
+  .tbl{width:100%; border-collapse:separate; border-spacing:0; border:2px solid var(--line); border-radius:18px; overflow:hidden; margin:14px 0; font-size:15px}
+  .tbl th,.tbl td{padding:11px 10px; text-align:left; vertical-align:top; border-top:1.5px solid var(--hair)}
+  .tbl tr:first-child th,.tbl tr:first-child td{border-top:none}
+  .tbl.cols th{background:#fff; color:var(--ink); border-bottom:2px solid var(--line); text-align:center; font-weight:700}
+  .tbl.cols td{text-align:center}
+  .tbl.cols td:first-child{text-align:left; background:var(--soft); font-weight:700}
+  .tbl.cols td:first-child .small{font-weight:500}
+  .tbl th,.tbl td{padding-left:8px; padding-right:8px}
+  .tbl .tag{white-space:nowrap}
+  /* 10/23 「글자 라인 맞게」 : 세금 표는 설명 칸을 왼쪽 정렬 · 가운데 높이로, 혜택 표시만 가운데 */
+  .tbl.taxt th,.tbl.taxt td{text-align:left; vertical-align:middle}
+  .tbl.taxt th:last-child,.tbl.taxt td:last-child{text-align:center; width:96px}
+  .tbl.taxt td:first-child{width:36%}
+  .tbl.cols td{vertical-align:middle}
+  .tbl.fees th:first-child{text-align:left}
+  .tbl .mid{background:var(--yel); color:var(--ink)}
+  .tbl .tag{display:inline-block; border-radius:999px; padding:3px 10px 1px; font-weight:700; font-size:14px}
+  .tbl .big{background:var(--blue-soft); color:var(--blue)}
+  .tbl .low{background:var(--soft); color:var(--sub); border:1.5px solid var(--hair)}
+  .tbl .fee{font-feature-settings:"tnum"; font-weight:500}
+
+  .check label{display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-top:1.5px dashed var(--hair); cursor:pointer; font-size:16.5px}
+  .check label:first-of-type{border-top:none}
+  .check input{appearance:none; -webkit-appearance:none; width:26px; height:26px; border:2px solid var(--line); border-radius:8px; flex:none; margin-top:1px; background:#fff; display:grid; place-items:center}
+  .check input:checked{background:var(--blue); border-color:var(--blue)}
+  .check input:checked::after{content:""; width:7px; height:13px; border:solid #fff; border-width:0 3px 3px 0; transform:rotate(45deg) translate(-1px,-1px)}
+  .check .q{display:block} .check .why{display:block; font-size:15px; color:var(--sub)}
+  #ckres{margin-top:10px; font-weight:500}
+
+  footer{margin-top:46px; border-top:2px solid var(--line); padding-top:18px; font-size:14px; color:var(--sub)}
+  footer a{color:var(--ink)}
+  footer ul{margin:6px 0 10px 18px}
+  .links{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0}
+  .links a{border:2px solid var(--line); border-radius:16px; padding:12px; text-align:center; text-decoration:none; color:var(--ink); font-weight:500; background:#fff}
+  .links a.main{grid-column:1/-1; background:var(--yel)}
+  .top{position:fixed; right:14px; bottom:16px; width:46px; height:46px; border-radius:50%; border:2px solid var(--line); background:#fff;
+    display:grid; place-items:center; text-decoration:none; color:var(--ink); font-weight:700; box-shadow:0 2px 0 var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="date">2026년 10월 기준 · 삐요의 ETF 정리표</div>
+  <h1>ISA에 담을 ETF<span class="blue">한 장 정리</span></h1>
+  <p class="lead">뭘 담아야 세금 혜택을 받아? 뭘 골라?<br><b>이거 하나 보면 끝나게</b> 정리했어.</p>
+  <nav class="toc" aria-label="목차">
+    <a href="#sum">한눈에 결론</a><a href="#tax">혜택 큰 것</a><a href="#main">주종목</a>
+    <a href="#mix">하나 더</a><a href="#warn">조심할 것</a><a href="#check">사기 전 체크</a>
+  </nav>
+</header>
+
+<section id="sum">
+  <span class="pill">한눈에 결론</span>
+  <p class="ans">이 4가지만 기억해</p>
+  <ul class="items">
+    <li><span class="h"><span class="n">1.</span>일반 계좌에서 <b class="blue">세금 붙는 걸</b> 담기</span><span class="d">국내 상장 해외 ETF · 채권 · 배당처럼 원래 15.4%를 떼는 것</span></li>
+    <li><span class="h"><span class="n">2.</span>주종목은 <b class="blue">하나</b>로</span><span class="d">S&amp;P500이나 나스닥100 중 하나를 정해서 꾸준히 모으기</span></li>
+    <li><span class="h"><span class="n">3.</span>하나 더 섞는다면 <b class="blue">다르게 움직이는 걸로</b></span><span class="d">예: 미국배당다우존스. 테마보다 길게 볼 ETF</span></li>
+    <li><span class="h"><span class="n">4.</span>급하게 쓸 돈은 <b class="red">넣지 않기</b></span><span class="d">3년 안에 쓸 돈은 떨어졌을 때 꺼내야 할 수도 있어</span></li>
+  </ul>
+</section>
+
+<section id="tax">
+  <span class="pill">ISA 혜택 큰 것 vs 적은 것</span>
+  <p class="ans">일반 계좌에서 <b>세금이 붙는 것</b>일수록 ISA 혜택이 커</p>
+  <div class="scroll">
+  <table class="tbl cols taxt">
+    <tr><th>무엇</th><th>일반 계좌 세금</th><th>ISA</th></tr>
+    <tr><td>국내 상장 해외 ETF<br><span class="small">S&amp;P500 · 나스닥100 등</span></td><td>오른 만큼 팔면 15.4%</td><td><span class="tag big">혜택 큼</span></td></tr>
+    <tr><td>채권</td><td>이자에 15.4%</td><td><span class="tag big">혜택 큼</span></td></tr>
+    <tr><td>국내 배당<br><span class="small">국내 배당주 · 국내 배당 ETF</span></td><td>배당 · 분배금에 15.4%</td><td><span class="tag big">혜택 큼</span></td></tr>
+    <tr><td>미국 배당 ETF<br><span class="small">미국배당다우존스 등</span></td><td>배당은 미국이 15% 먼저 떼<br><span class="small">오른 만큼은 팔면 15.4%</span></td><td><span class="tag mid">반만 큼</span></td></tr>
+    <tr><td>국내 주식<br><span class="small">삼성전자 · 하이닉스 등</span></td><td>팔아서 번 돈 0원<br><span class="small">배당만 15.4%</span></td><td><span class="tag low">혜택 적음</span></td></tr>
+    <tr><td>국내 주식형 ETF<br><span class="small">코스피200 등</span></td><td>팔아서 번 돈 0원<br><span class="small">분배금만 15.4%</span></td><td><span class="tag low">혜택 적음</span></td></tr>
+  </table>
+  </div>
+  <p class="small">미국 배당 ETF는 ISA에 담아도 미국이 먼저 뗀 15%는 못 돌려받아(2025년부터 바뀐 방식). 대신 오른 만큼 번 돈은 ISA 혜택을 그대로 받아. 그리고 혜택이 적다고 ISA에서 사면 안 되는 건 아니야. 세금 아끼는 효과가 작을 뿐이야.</p>
+  <div class="box soft">
+    <h3>예를 들면</h3>
+    <p class="small">매달 30만원씩 3년(30만원 × 36개월 = <b>1,080만원</b>), S&amp;P500 7 : 미국배당다우존스 3으로 모았다면 지난 3년 실제 가격으로 <b>1,355만원</b>. 늘어난 275만원에 붙는 세금은</p>
+    <div class="vs">
+      <div class="c"><div class="t">일반 계좌</div><div class="v red">42만원</div></div>
+      <div class="c"><div class="t">ISA (일반형)</div><div class="v blue">7만원</div></div>
+      <div class="mid">VS</div>
+    </div>
+    <p class="small">ISA는 이익 200만원까지 0원, 넘는 75만원에 9.9%. 지난 기록이라 앞으로도 같다는 보장은 없어. ISA 세금 규칙은 <a href="https://piyotoon01.github.io/isa/">ISA 한 장 정리</a>에.</p>
+  </div>
+</section>
+
+<section id="main">
+  <span class="pill">주종목: 하나만 골라</span>
+  <p class="ans">S&amp;P500이나 나스닥100 중 <b>하나</b></p>
+  <div class="vs">
+    <div class="c"><div class="t">S&amp;P500</div><div class="s">미국 큰 회사 500개</div><div class="v" style="font-size:19px">여러 업종 고루</div></div>
+    <div class="c"><div class="t">나스닥100</div><div class="s">나스닥 큰 회사 100개</div><div class="v" style="font-size:19px">기술주에 몰림</div></div>
+    <div class="mid">VS</div>
+  </div>
+  <ul class="items">
+    <li><span class="h">둘 다 사면 나눈 게 아니야</span><span class="d">맨 위 큰 회사(애플 · 마이크로소프트 · 엔비디아 · 아마존 등)가 거의 같아서, 둘 다 사면 AI · 기술주 비중만 커져.</span></li>
+    <li><span class="h">나스닥100은 더 크게 오르고 더 크게 흔들려</span><span class="d">2022년 초에 1,000만원 넣었다면 그해 말 S&amp;P500 <b>867만원</b>, 나스닥100 <b class="red">714만원</b> (원화 기준)</span></li>
+  </ul>
+  <h3 style="margin-top:22px; font-size:18px">국내 상장 대표 상품</h3>
+  <p class="small">같은 지수면 운용사가 달라도 담긴 회사는 같아. 총보수(1년에 떼는 비용)와 거래량을 보고 <b>하나만</b> 골라서 모으면 돼.</p>
+  <div class="scroll">
+  <table class="tbl cols fees">
+    <tr><th>S&amp;P500</th><th>총보수(연)</th><th>분배</th></tr>
+    <tr><td>ACE 미국S&amp;P500</td><td class="fee">0.0047%</td><td>분기</td></tr>
+    <tr><td>KODEX 미국S&amp;P500</td><td class="fee">0.0062%</td><td>분기</td></tr>
+    <tr><td>RISE 미국S&amp;P500</td><td class="fee">0.0047%</td><td>분기</td></tr>
+    <tr><td>SOL 미국S&amp;P500</td><td class="fee">0.0047%</td><td>매달</td></tr>
+    <tr><td>TIGER 미국S&amp;P500</td><td class="fee">0.0068%</td><td>분기</td></tr>
+  </table>
+  </div>
+  <div class="scroll">
+  <table class="tbl cols fees">
+    <tr><th>나스닥100</th><th>총보수(연)</th><th>분배</th></tr>
+    <tr><td>ACE 미국나스닥100</td><td class="fee">0.0062%</td><td>분기</td></tr>
+    <tr><td>KODEX 미국나스닥100</td><td class="fee">0.0062%</td><td>분기</td></tr>
+    <tr><td>RISE 미국나스닥100</td><td class="fee">0.0062%</td><td>분기</td></tr>
+    <tr><td>TIGER 미국나스닥100</td><td class="fee">0.0068%</td><td>분기</td></tr>
+  </table>
+  </div>
+  <p class="small">가나다 · 알파벳 순, 이름에 (H)가 없는 환노출형. 총보수는 2026년 10월 22~23일 확인한 값이고 자주 바뀌어. 표시된 총보수 말고 실제로 드는 비용(매매 수수료 등)은 조금 더 있어.</p>
+</section>
+
+<section id="mix">
+  <span class="pill">하나 더 섞는다면</span>
+  <p class="ans">테마 대신 <b>길게 볼 ETF</b>로, 예를 들면 미국배당다우존스</p>
+  <ul class="items">
+    <li><span class="h">어떤 회사를 담아?</span><span class="d"><b>10년 넘게 배당을 이어 온</b> 미국 회사 중에서 현금 흐름 · 수익성 · 배당 크기 · 배당이 늘어난 속도를 보고 고른 100개</span></li>
+    <li><span class="h">왜 섞어?</span><span class="d">ISA는 3년 넘게 굴리는 계좌라 테마보다 길게 볼 ETF가 맞아. 기술주가 적고 필수소비재 · 헬스케어 · 에너지가 많아서(각각 20% 안팎) 주종목과 <b>다르게 움직일 때</b>가 많아.</span></li>
+  </ul>
+  <div class="box soft">
+    <h3>2022년에 1,000만원씩 넣었다면</h3>
+    <div class="vs">
+      <div class="c"><div class="t">S&amp;P500</div><div class="s">2022년 말</div><div class="v red">867만원</div></div>
+      <div class="c"><div class="t">미국배당다우존스</div><div class="s">2022년 말</div><div class="v blue">1,025만원</div></div>
+      <div class="mid">VS</div>
+    </div>
+    <p class="small">2026년 10월 지금은 S&amp;P500 1,926만원 · 미국배당다우존스 1,694만원. 늘 이기는 게 아니라 <b>다르게 움직이는 것</b>이 섞는 이유야.</p>
+  </div>
+  <div class="scroll">
+  <table class="tbl cols fees">
+    <tr><th>미국배당다우존스</th><th>총보수(연)</th><th>분배</th></tr>
+    <tr><td>ACE 미국배당다우존스</td><td class="fee">0.01%</td><td>매달</td></tr>
+    <tr><td>KODEX 미국배당다우존스</td><td class="fee">0.0099%</td><td>매달</td></tr>
+    <tr><td>SOL 미국배당다우존스</td><td class="fee">0.01%</td><td>매달</td></tr>
+    <tr><td>TIGER 미국배당다우존스</td><td class="fee">0.01%</td><td>매달</td></tr>
+  </table>
+  </div>
+  <p class="small">네 개 모두 같은 지수(Dow Jones U.S. Dividend 100)를 따라가. 미국 SCHD와 같은 지수야. 매달 나오는 배당은 미국이 15%를 먼저 떼고 들어와서 ISA로 아끼는 세금은 작고, ISA 혜택은 주로 <b>오른 만큼</b>에서 받아.</p>
+  <div class="box">
+    <h3>채권은?</h3>
+    <p class="small" style="margin:0">채권 ETF로 사거나, 증권사 앱에서 국내 채권을 직접 살 수도 있어(장외채권). 미국 국채를 직접 사는 건 ISA에서 안 돼서 국내 상장 미국채 ETF로 담아. 살 때마다 만기 · 금리가 달라서 매달 모으기보다는 <b>쓸 날이 정해진 돈</b>에 맞아.</p>
+  </div>
+</section>
+
+<section id="warn">
+  <span class="pill">조심할 것</span>
+  <p class="ans">사기 전에 이것만 확인해</p>
+  <ul class="items">
+    <li><span class="h"><span class="n">1.</span>테마 · 레버리지는 <b class="red">목적부터</b></span><span class="d">뉴스에 나와서, 오를 것 같아서 산 건 크게 흔들려. 들고 있다면 왜 사는지, 언제 팔지 정하고 들어가자.</span></li>
+    <li><span class="h"><span class="n">2.</span>커버드콜은 <b>배당 ETF랑 달라</b></span><span class="d">이름에 '커버드콜' · '프리미엄'이 붙은 건 분배금을 많이 주는 대신 오를 때 덜 올라. 미국배당다우존스와 다른 상품이야.</span></li>
+    <li><span class="h"><span class="n">3.</span>미국에 상장된 ETF는 <b>ISA에서 못 사</b></span><span class="d">SPY · QQQ · SCHD 같은 건 안 되고, 같은 지수를 따라가는 국내 상장 ETF로 담아.</span></li>
+    <li><span class="h"><span class="n">4.</span>이름 끝 <b>(H)</b>는 환헤지</span><span class="d">같은 지수라도 (H)가 붙으면 환율 영향을 빼서 다르게 움직여. 하나 고를 때 같이 확인해.</span></li>
+  </ul>
+</section>
+
+<section id="check">
+  <span class="pill">사기 전 체크</span>
+  <p class="ans">해당하는 걸 눌러 봐</p>
+  <div class="box check" id="ck">
+    <label><input type="checkbox" data-k="a"><span><span class="q">3년 안에 쓸 돈은 <b>아니야</b></span><span class="why">보증금 · 결혼자금처럼 날짜가 정해진 돈이면 빼</span></span></label>
+    <label><input type="checkbox" data-k="b"><span><span class="q">주종목 <b>하나</b>를 정했어</span><span class="why">S&amp;P500이나 나스닥100 중 하나</span></span></label>
+    <label><input type="checkbox" data-k="c"><span><span class="q">같은 지수 ETF를 <b>여러 개</b> 사고 있진 않아</span><span class="why">운용사만 다른 같은 지수 · 겹치는 지수</span></span></label>
+    <label><input type="checkbox" data-k="d"><span><span class="q">섞는 건 주종목과 <b>다르게 움직이는</b> 거야</span><span class="why">기술주 하나 더가 아니라</span></span></label>
+    <label><input type="checkbox" data-k="e"><span><span class="q">테마 · 레버리지는 <b>왜 사는지</b> 말할 수 있어</span><span class="why">없으면 체크해도 돼</span></span></label>
+    <p id="ckres"></p>
+  </div>
+  <div class="box yel">
+    <h3>다음 편에서 더 자세히</h3>
+    <p class="small" style="margin:0">S&amp;P500 vs 나스닥100 · 같은 S&amp;P500인데 뭐가 달라(수수료 · 환헤지) · 해외 ETF는 왜 ISA에서 사야 할까 · 매달 10만원 적립식 시뮬레이션. <b>삐요의 30일 돈공부</b>에서 이어서 올려!</p>
+  </div>
+</section>
+
+<div class="links">
+  <a class="main" href="https://www.instagram.com/piyo_toon/">인스타 @piyo_toon 에서 다음 편 보기</a>
+  <a href="https://piyotoon01.github.io/isa/">ISA 한 장 정리</a>
+  <a href="https://litt.ly/piyo_toon">삐요 링크 모음</a>
+</div>
+
+<footer>
+  <p><b>원금 보장 아님 · 투자 권유 아님.</b> 이 정리표는 ETF를 고르는 기준을 쉽게 설명하려고 만든 자료야. 상품 이름은 예시로 나란히 적었을 뿐 추천이 아니고, 투자 결정은 본인 판단이야. 총보수 등 세부 조건은 운용사 안내를 꼭 확인해.</p>
+  <p>기준일 2026년 10월 23일.</p>
+  <ul>
+    <li>계산 방법: 미국 상장 ETF(SPY · QQQ · SCHD)의 배당 포함 월말 가격에 그달 원달러 환율을 곱해 원화로 계산. 국내 상장 환노출 ETF와 비슷하지만 보수 · 세금 · 거래 비용은 빠짐. 과거 수익률은 미래 수익을 보장하지 않음.</li>
+    <li>세금: 조세특례제한법 제91조의18 (일반형 비과세 200만원, 초과분 9.9% 분리과세), 소득세법 (배당 · 이자소득 15.4%, 지방소득세 포함)</li>
+    <li>총보수 · 분배 주기: 미래에셋(TIGER) · 신한(SOL) 운용사 상품 페이지(2026.10.23), 제로인 펀드 정보 funetf.co.kr(ACE · KODEX · RISE, 2026.10.22 기준)</li>
+    <li>미국배당다우존스 지수 선정 기준: S&amp;P Dow Jones Indices 자료 · 업종 비중: 같은 지수를 따라가는 SCHD 기준(Schwab, 2026.10.20)</li>
+    <li>ETF 과세: 전국투자자교육협의회 ETF 세금 안내, 소득세법 제129조</li>
+    <li>국내 상장 해외 ETF 분배금의 외국납부세액 처리 변경(2025년 선환급 폐지): 한국경제 2025.2.4 보도 등. 세부 처리는 증권사 안내 확인</li>
+  </ul>
+  <p>만든 사람 · 삐요 (@piyo_toon) · © 2026</p>
+</footer>
+</div>
+<a class="top" href="#" aria-label="맨 위로">↑</a>
+
+<script>
+(function(){
+  var box=document.getElementById('ck'), out=document.getElementById('ckres'), KEY='piyo-etf-check';
+  var st={}; try{ st=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  var ins=box.querySelectorAll('input');
+  ins.forEach(function(i){ i.checked=!!st[i.dataset.k]; i.addEventListener('change',run); });
+  function run(){
+    var c={}, n=0; ins.forEach(function(i){ c[i.dataset.k]=i.checked; if(i.checked) n++; });
+    try{ localStorage.setItem(KEY, JSON.stringify(c)); }catch(e){}
+    out.innerHTML = n===ins.length ? '<span class="blue">5개 다 체크! 사기 전 준비 끝이야.</span>'
+                                   : '<span class="small">'+n+' / '+ins.length+' 체크했어. 비어 있는 건 사기 전에 한 번 더 생각해 봐.</span>';
+  }
+  run();
+})();
+</script>
+</body>
+</html>
